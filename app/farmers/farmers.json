@@ -1,0 +1,16 @@
+[
+    {
+        "number": 0, 
+        "id": "testmarket", 
+        "imageUrl": "app/img/farm.jpg", 
+        "name": "test market", 
+        "snippet": "hello, this is a test market"
+    }, 
+    {
+        "number": 1, 
+        "id": "testmarket1", 
+        "imageUrl": "img/farm2.jpg", 
+        "name": "test market1", 
+        "snippet": "hello, this is a test market1"
+    }
+]
