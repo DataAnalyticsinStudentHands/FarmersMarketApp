@@ -1,0 +1,36 @@
+<div ui-view>
+<h1>Markets</h1>
+Filter: 
+<select ng-model="orderProp" ng-init="orderProp = hello">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+</select>
+
+
+
+<gm-map gm-map-id="'myMap'" 
+        gm-center="center" 
+        gm-zoom="zoom" 
+        style="width:500px;height:500px;">
+
+<gm-markers   gm-objects="farmers"
+              gm-id="object.id"
+              gm-position="{ lat: object.location.lat, lng: object.location.lng }"
+              gm-events="markerEvents"
+              gm-on-openinfowindow="selectedFarmer = object; infoWindow.open(marker.getMap(), marker);"
+              gm-on-click="triggerOpenInfoWindow(object)"
+              gm-on-click="selectFarmer(object, marker)"
+              gm-marker-options="getFarmerOpts(object)">
+</gm-markers>
+
+</gm-map>
+
+
+<div gm-info-window="infoWindow">
+    <a ui-sref="markets.info({ id: selectedFarmer.id })">
+        <h4>You have selected {{selectedFarmer.name}}</h4>
+        <br>
+    </a>
+</div>
+
+</div>

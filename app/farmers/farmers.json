@@ -1,16 +1,16 @@
 [
     {
         "number": 0, 
-        "id": "testmarket", 
-        "imageUrl": "app/img/farm.jpg", 
-        "name": "test market", 
-        "snippet": "hello, this is a test market"
+        "id": "farm-1", 
+        "imageUrl": "img/farm.jpg", 
+        "name": "Farm One", 
+        "snippet": "We sell a wide variety of stuff. Come visit us at xx time and these days - xx."
     }, 
     {
         "number": 1, 
-        "id": "testmarket1", 
+        "id": "farm-2", 
         "imageUrl": "img/farm2.jpg", 
-        "name": "test market1", 
-        "snippet": "hello, this is a test market1"
+        "name": "Farm Two", 
+        "snippet": "We have more stuff than that other farm in the .JSON file."
     }
 ]

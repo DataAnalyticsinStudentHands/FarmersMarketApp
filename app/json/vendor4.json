@@ -1,0 +1,8 @@
+{
+  "location" : "somewhere in galveston, TX",
+  "hourOpen" : "05:00",
+  "hourClosed" : "20:00",
+  "name" : "vendor4",
+  "phoneNumber" : "123-123-1234",
+  "products" : ["water","fish","boats", "apples"]
+}

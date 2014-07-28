@@ -1,0 +1,120 @@
+{
+    {
+    "name" : "Grogan's Mill Village",
+    "address": "7 Switchbud Pl, The Woodlands, TX 77380",
+    "blurb" : "insert blurb about grogan's mill village here",
+    "daysHours": {
+      "Sunday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Monday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Tuesday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Wednesday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Thursday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Friday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Saturday" : {
+        "isOpen" : "True",
+        "hours" : "8AM to Noon"
+      }
+    },
+    "email" : "www@www.www",
+    "id" : 0,
+    "imageURL" : "http://woodlandsevents.com/images/stories/villages/grogans-mill-farmers-market.png",
+	"isFavorite" : "false",
+    "phoneNumber" : "(281) 292-2900",
+    "website" : "www.www.www",
+    "vendors" : {
+      "vendor1" : {
+        "phone" : "832-832-832",
+        "location" : "Texas",
+        "name" : "vendor1",
+        "website" : "www.vendors.com",
+        "specialty" : "vendors1Specialty",
+        "imageURL" : "http://www.illustrationsof.com/royalty-free-number-one-clipart-illustration-438818.jpg"
+      },
+      "vendor2" : {
+        "phone" : "832-num-ber2",
+        "location" : "Two, Texas",
+        "name" : "vendor2",
+        "website" : "www.vendorsTwo.com",
+        "specialty" : "vendors2Specialty",
+        "imageURL" : "http://digimind.com/blog/wp-content/uploads/2012/02/number2c.png"
+      }
+    }
+  },
+    {
+    "name" : "test",
+    "address": "3000 Richmond Houston, TX 77098",
+    "blurb" : "This Week: Start your morning off right again this Saturday at the Eastside St. Farmers' Market with a dance workout conducted by Doonya! Be there at 11 and find out why this fun workout group is sweeping the Nation!",
+    "daysHours": {
+      "Sunday" : {
+        "isOpen" : "True",
+        "hours" : "10AM to 1PM"
+      },
+      "Monday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Tuesday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Wednesday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Thursday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Friday" : {
+        "isOpen" : "False",
+        "hours" : "0"
+      },
+      "Saturday" : {
+        "isOpen" : "True",
+        "hours" : "8AM to Noon"
+      }
+    },
+    "email" : "info@urbanharvest.org",
+    "id" : 1,
+    "imageURL" : "http://woodlandsevents.com/images/stories/villages/grogans-mill-farmers-market.png",
+	"isFavorite" : "false",
+    "phoneNumber" : "713.880.5540",
+    "website" : "urbanharvest.org",
+    "vendors" : {
+      "vendor1" : {
+        "phone" : "(713) 526-2351",
+        "location" : "Richmond Ave, Houston, Texas",
+        "name" : "Airline Seafood",
+        "website" : "https://www.facebook.com/pages/Airline-Seafood/145975372107877",
+        "specialty" : "Seafood",
+        "imageURL" : "http://www.hottowncoolcity.org/photos/438.jpg"
+      },
+      "vendor2" : {
+        "phone" : "(832) 239-0437",
+        "location" : "Richmond Ave, Houston, Texas",
+        "name" : "Angela's Oven",
+        "website" : "www.angelasoven.com",
+        "specialty" : "Bakery",
+        "imageURL" : "http://www.angelasoven.com/Site/Welcome_files/shapeimage_2.png"
+      } 
+    }
+    } 
+}

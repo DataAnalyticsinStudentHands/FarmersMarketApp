@@ -1,0 +1,8 @@
+{
+  "location" : "1234 main street, 77002",
+  "hourOpen" : "10:00",
+  "hourClosed" : "16:00",
+  "name" : "vendor1",
+  "phoneNumber" : "713-713-7130",
+  "products" : ["apples","bananas","oranges", "herbs"]
+}

@@ -1,0 +1,20 @@
+<div ui-view>
+    
+    
+    {{date}}
+<div ng-repeat = "event in events">    
+    <a ui-sref="events.info({ id: event.id })">
+        {{event.dateMonth}} -
+        {{event.dateDay}} -
+        {{event.dateYear}}
+        //
+        {{event.location}}
+        <br>
+        {{event.snippet}}
+        <br>
+    </a>
+    <br>
+</div>
+
+
+</div>
