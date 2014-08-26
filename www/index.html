@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" ng-app = "farmersMarketApp">
+  <head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+  <title>Farmer's Market App</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link href="http://fonts.googleapis.com/css?family=Rambla:400,700" rel="stylesheet" type="text/css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src = "bower_components/restangular/dist/restangular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!--<script src="bower_components/angular-animate/angular-animate.js"></script>-->
+  <script src="bower_components/AngularGM/angular-gm.js"></script>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.6.4.js'></script>
+
+  <script src="intelxdk.js" type="text/javascript"></script>    
+  
+<!--start of fast click implementation-->
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script text = "javascript">
+    window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+    }, false);
+    </script>
+<!--end of fast click implementation-->
+
+    
+    <!-- removes the splash screen in intel xdk-->
+  <script text = "javascript">
+      document.addEventListener("intel.xdk.device.ready",function(){ intel.xdk.device.hideSplashScreen(); },false);  
+    </script>
+    
+    <!-- Prevent copy paste for all elements except text fields -->
+    <style type="text/css">
+    * { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+    input, textarea { -webkit-user-select:text; }
+    body { background-color:white; color:black }
+    </style>
+</head>
+    <body>
+        <!--<div id = "example-four">-->
+<!--
+        
+            <div id = "example-five">
+        
+            Sample Essays
+
+The best way to improve your writing is to read good writing. You are already doing that in your English class; we have provided you with a list of notable memoirs by celebrated authors. We’ve compiled various sample essays from people who have recently completed the college application process. These essays were chosen for their clarity, originality, voice, and style.
+
+Some are emotional, some are cerebral, and some are a combination of the two. Others are funny, serious, philosophical, and creative. They are as different as the personalities of the people who wrote them, but what these essays all have in common is their honesty and the effort put into creating them.
+
+These personal statements have one other thing in common: the authors were admitted to the colleges of their choice.
+Allison Dencker
+Stanford University, Class of 2006
+As you reflect on life thus far, what has someone said, written, or expressed in some fashion that is especially meaningful to you. Why?
+
+According to Mother Teresa, “If you judge someone, you have no time to love them.” I first saw this quote when it was posted on my sixth-grade classroom wall, and I hated it. Rather, I hated Mother Teresa’s intention, but I knew that the quote’s veracity was inarguable. I felt that it was better to judge people so as not to have to love them, because some people don’t deserve a chance. Judgments are shields, and mine was impenetrable.
+
+Laura was my dad’s first girlfriend after my parents’ divorce. The first three years of our relationship were characterized solely by my hatred toward her, manifested in my hurting her, each moment hurting myself twice as much. From the moment I laid eyes on her, she was the object of my unabated hatred, not because of anything she had ever done, but because of everything she represented. I judged her to be a heartless, soulless, two-dimensional figure: she was a representation of my loneliness and pain. I left whenever she entered a room, I slammed car doors in her face. Over those three years, I took pride in the fact that I had not spoken a word to her or made eye contact with her. I treated Laura with such resentment and anger because my hate was my protection, my shield. I, accustomed to viewing her as the embodiment of my pain, was afraid to let go of the anger and hate, afraid to love the person who allowed me to hold onto my anger, afraid that if I gave her a chance, I might love her.
+
+For those three years, Laura didn’t hate me; she understood me. She understood my anger and my confusion, and Laura put her faith in me, although she had every reason not to. To her, I was essentially a good person, just confused and scared; trying to do her best, but just not able to get a hold of herself. She saw me as I wished I could see myself.
+
+None of this became clear to me overnight. Instead, over the next two years, the one-dimensional image of her in my mind began to take the shape of a person. As I let go of my hatred, I gave her a chance. She became a woman who, like me, loves Ally McBeal and drinks a lot of coffee; who, unlike me, buys things advertised on infomercials.
+
+Three weeks ago, I saw that same Mother Teresa quote again, but this time I smiled. Laura never gave up on me, and the chance she gave me to like her was a chance that changed my life. Because of this, I know the value of a chance, of having faith in a person, of seeing others as they wish they could see themselves. I’m glad I have a lot of time left, because I definitely have a lot of chances left to give, a lot of people left to love.
+Jeremy Chapman
+Duke University, Class of 2005
+Topic of your choice.
+Me(s): A One-Act Play
+
+(Several of me occupy themselves around my bedroom. Logical me sits attentively in my desk chair. Lighthearted me hangs upside-down, off the back of my recliner. Existentialist me leans against my door, eyebrows raised. Stressed me, Independent me, and Artistic me are also present.)
+
+Stressed: So, come on, what’s this meeting about?
+
+Logical: (Taking a deep breath) Well, it’s time we come together. It’s time we create “Jeremy.”
+
+Lighthearted: (Furrowing his brow, but smiling) What? Is this “Captain Planet,” where all the characters join fists and out bursts the superhero?
+
+Logical: No, this meeting is an opportunity to evaluate where we are in life, like a State of the Union Address.
+
+Existentialist: Speaking of which, I’ve been meaning to ask all of you: college? Honestly, is it worth it? You . . . (gestures toward Logical) you’re writing that philosophy book, which should do well. And look at Artsy over there! He’s composing music, making beautiful art; why don’t we see where we can get with that? Not to mention the endless possibilities if Lighthearted aims for Saturday Night Live. Think about the number of successful people in this world who didn’t go to college! (Logical shakes his head) I mean, let’s be realistic: if we go to college, eventually we’ll be required to declare a major. Once we earn a degree, it might be harder to pursue our true passions—comedy, music, art . . .
+
+Logical: Not true. First of all, you failed to mention my fascinations with neurology and psychology, which are potential majors at every university. Furthermore, opportunities to study comedy, music, and art are available at all colleges too; we just have to go after them. (Sends a reassuring nod toward Artistic) In fact, if anything, college will facilitate our involvement in activities like drawing, improvisational comedy, piano, psychological experiments, Japanese, ping-pong . . .
+
+Artistic: Yeah—imagine how much better I’d be at writing music if I took a music-composition course.
+
+Logical: Exactly. And what about our other educational goals such as becoming fluent in Japanese, learning the use of every TI-89 calculator button . . .
+
+Independent: I agree. Plus, I was thinking of college as a social clean slate. I am looking forward to living on my own—away from our overprotective, over-scrutinizing family. No more hesitating to ask girls out!
+
+Lighthearted: (He has not been paying attention to the discussion) What ever happened to Captain Planet? He was like, really popular in 1987 and then . . .
+
+Stressed: Enough out of you. (Lighthearted makes a mocking face at Stressed) You’re giving me a headache. By the way, everyone, we’re not making much progress here, and I’m beginning to feel a stress-pimple coming on. (All except Existential gather around Stressed and comfort him)
+
+Existential: There’s really no reason to be stressed about anything. If you think about how trivial—how meaningless—all this worry is, it’s kind of pathetic that your anxiety is about to get us all stuck with a pimple.
+
+Independent: I don’t know what you’re talking about, Mr. I-Know-Everything-And-It-All-Means-Nothing, but mightn’t we as well calm down Stressed?
+
+Existential: If you consider that your top priority right now. I thought we came here to do something else.
+
+Stressed: He’s right, I’m fine. Let’s just get back to work, and the problem will heal itself. Where were we?
+
+Lighthearted: We were searching through the late 80s for Captain Planet’s mysterious disapp . . . (Stressed plugs his ears and momentarily steps out of the room; Independent shoves Lighthearted; Logic buries his face in his hands; Artistic begins doodling; Existential laughs)
+
+Existential: We’re a bunch of fools. It amazes me that we all squeezed into the same person. You know, if you think about the conversation we just had, it does reveal a lot about “Jeremy.”
+
+Artistic: (Chewing his pencil) He’s got a point. And I thought of a cool song. So we were productive, after all. We should congregate like this more often. We can go places if we stick together.
+
+All: Yeah, we can. (They all put their right fists together, and there is a sudden burst of light and thunderous sound, as in the old “Captain Planet” cartoons, followed by a knocking on the door)
+
+Parents: Jeremy, are you OK? What’s all that noise?
+
+Jeremy: Yeah, I’m fine. Just puttin’ myself together. I think I’ve got a good idea for a college application essay . . .
+Soraya Palmer
+Connecticut College, Class of 2007
+Evaluate a significant experience, achievement, risk you have taken, or ethical dilemma you have faced and its impact on you
+
+Finding Truths
+
+In my life, I have taken many journeys without which I would not have experienced important truths. My father started us off early, taking us on many journeys to help us understand that true knowledge comes only from experience. We took trips every winter break to Madrid, Mexico, Costa Rica, and to Jamaica and Trinidad, my parents’ homeland for Christmas. Silly things I remember from those trips include the mango chili sauce on the pork in Maui, the names of the women who gave out the towels by the pools in Selva Verde, Costa Rica, eating dinner at 10 p.m. in Spain. These were all tourist experiences that I, at first, found spellbinding. My truths were the truths of the tourist brochures: beautiful hotels, beaches, and cities. I did not see the blindfolds. I did not appreciate how being held hostage by the beauty of the surface—the beaches and cities—blinded me to the absence of Puerto Rican natives on the streets of San Juan; I did not understand how the prevalence and familiarity of English conspired to veil the beauty of the Spanish language beneath volumes of English translations.
+
+I learned more about these truths in my sophomore year of high school, when I was among a group of students selected to visit Cuba. My grandmother was born in Cuba, yet I had never thought to research my own heritage. I have remained the naïve American who saw Castro as some distant enemy of my country, accepting this as fact because this seemed to be the accepted wisdom. I soon became intrigued, however, with this supposed plague to my freedom, my culture, and everything good and decent. I began to think, just what is communism anyway? What’s so bad about Castro and Cuba—and I hear they have good coffee. I believed that what was missing was a lack of understanding between our two cultures, and that acceptance of our differences would come only with knowledge.
+
+My first impression of Cuba was the absence of commercialism. I saw no giant golden arch enticing hungry Cubans with beef-laced fries; I did see billboards of Che Guevara and signposts exhorting unity and love. I realized, however, that much of the uniqueness that I relished here might be gone if the trade blockades in Cuba were ever lifted. The parallels and the irony were not lost on me. I was stepping out of an American political cave that shrouded the beauty of Cuba and stepping into another, one built on patriotic socialism, one where truths were just as ideological as, yet very different from, mine.
+
+History, I recognized, is never objective. The journeys I have taken have been colored by my prior experiences and by what my feelings were in those moments. Everyone holds a piece of the truth. Maybe facts don’t matter. Perhaps my experience is my truth and the more truths I hear from everyone else, the closer I will get to harmonization. Maybe there is no harmony, and I must go through life challenging and being challenged, perhaps finding perspectives from which I can extract—but never call—truth. I must simply find ways to understand others, to seek in them what is common to us all and perhaps someday find unity in our common human bond. This is what life has taught me so far, my sum of truths gleaned from experiencing many cultures. I don’t know if these truths will hold, but I hope that my college experience will be like my trip to Cuba—challenging some truths, strengthening others, and helping me experience new ones.
+Daniele Melia
+New York University, Class of 2007
+A range of academic interests, personal perspectives, and life experiences adds much to the educational mix. Given your personal background, describe an experience that illustrates what you would bring to the diversity in the college community or an encounter that demonstrated the importance of diversity to you.
+
+I feel sick. I’m nervous and my stomach’s turning. The room is lined with neat rows of desks, each one occupied by another kid my age. We’re all about to take the SATs. The proctor has instructed us to fill out section four: “race.”
+
+I cannot be placed neatly into a single racial category, although I’m sure that people walking down the street don’t hesitate to label me “caucasian.” Never in my life has a stranger not been surprised when I told them I was half black.
+
+Having light skin, eyes, and hair, but being black and white often leaves me misperceived. Do I wish that my skin were darker so that when I tell people I’m black they won’t laugh at me? No, I accept and value who I am. To me, being black is more than having brown skin; it’s having ancestors who were enslaved, a grandfather who managed one of the nation’s oldest black newspapers, the Chicago Daily Defender, and a family who is as proud of their heritage as I am. I prove that one cannot always discern another’s race by his or her appearance.
+
+I often find myself frustrated when explaining my racial background, because I am almost always proving my “blackness” and left neglecting my Irish-American side. People have told me that “one drop of black blood determines your race,” but I opt not to follow this rule. In this country a century ago, most mixed-race children were products of rape or other relationships of power imbalance, but I am not. I am a child in the twenty-first century who is a product of a loving relationship. I choose the label biracial and identify with my black and Irish sides equally. I am proud to say that my paternal great-grandparents immigrated to this country from Ireland and that I have found their names on the wall at Ellis Island, but people are rarely interested in that. They can’t get over the idea that this girl, who according to their definition looks white, is not.
+
+Last year, at my school’s “Sexual Awareness Day,” a guest lecturer spoke about the stereotypical portrayal of different types of people on MTV’s The Real World. He pointed out that the white, blond-haired girls are always depicted as completely ditsy and asked me how it felt to fit that description. I wasn’t surprised that he assumed I was white, but I did correct his mistake. I told him that I thought the show’s portrayal of white girls with blond hair was unfair. I went on to say that we should also be careful not to make assumptions about people based on their physical appearance. “For example,” I told him, “I’m not white.” It was interesting that the lecturer, whose goal was to teach students not to judge or make assumptions about people based on their sexual orientation, had himself made a racial assumption about me.
+
+I often find myself wishing that racial labels didn’t exist so that people wouldn’t rely on race alone to understand a person’s thoughts, actions, habits, and personality. One’s race does not reveal the content of their character. When someone finds out that I am biracial, do I become a different person in his or her eyes? Am I suddenly “deeper,” because I’m not just the “plain white girl” they assumed I was? Am I more complex? Can they suddenly relate to me more (or less)? No, my race alone doesn’t reveal who I am. If one’s race cannot be determined simply by looking at a person, then how can it be possible to look at a person and determine her inner qualities?
+
+Through census forms, racial questionnaires on the SATs, and other devices, our society tries to draw conclusions about people based on appearance. It is a quick and easy way to categorize people without taking the time to get to know them, but it simply cannot be done.
+Ted Mullin
+Carleton College, Class of 2006
+If you could have lunch with any person, living, dead, or fictional, who would it be and what would you discuss?
+
+We met for lunch at El Burrito Mexicano, a tiny Mexican lunch counter under the Red Line “El” tracks. I arrived first and took a seat, facing the door. Behind me the TV showed highlights from the Mexican Soccer League. I felt nervous and unsure. How would I be received by a famous revolutionary—an upper-middle-class American kid asking a communist hero questions? Then I spotted him in the doorway and my breath caught in my throat. In his overcoat, beard, and beret he looked as if he had just stepped out from one of Batista’s “wanted” posters. I rose to greet Ernesto “Che” Guevara and we shook hands. At the counter we ordered: he, enchiladas verdes and a beer, and I, a burrito and two “limonadas.” The food arrived and we began to talk.
+
+I told him that I felt honored to meet him and that I admired him greatly for his approach to life. He saw the plight of Latin America’s poor and tried to improve their state but went about it on his own terms, not on society’s. He waved away my praise with his food-laden fork, responding that he was happy to be here and that it was nice to get out once in a while. Our conversation moved on to his youth and the early choices that set him on his path to becoming a revolutionary.
+
+I have always been curious about what drove Che Guevara to abandon his medical career and take military action to improve the lot of Cuba’s poor. Why did he feel that he could do more for the poor as a guerilla leader than as a doctor? His answer was concise: as he came of age he began to realize that the political situation in Latin America had become unacceptable and had to be changed as soon as possible. He saw in many nations “tin-pot” dictators reliant on the United States for economic and military aid, ruining their nations and destroying the lives of their people. He felt morally obligated to change this situation and believed he could help more people in a more direct manner as a warrior rather than as a doctor. Next I asked why he chose communism as the means of achieving his goals.
+
+He replied that communism was merely a means to an end. That end was a Central and South America run by its citizens, free of foreign intervention. In his opinion communism was the best way to realize this dream. I agreed that a nation should be run by and for its citizens, but I hesitated to agree wholeheartedly. I was concerned by his exclusive emphasis on Latin Americans. His description, as I interpreted it, implied a nationalism and exclusion of others, most notably Americans. I felt that this focus on “Latin Americanism” could easily lead to the outbreak of war in the region.
+
+Moving from Cuba’s past to its present, I asked him if he sees the revolution begun in 1959 as successful. Has Cuba fulfilled his vision for it? Che Guevara sighed and gathered his thoughts for a moment. Then, speaking slowly, he said that he didn’t think that Cuba had fulfilled the revolution because the revolution never spread beyond Cuba, as he had hoped it would. The revolution did not spread, he reasoned, because of the success of the United States in propping up corrupt dictators and the inability of Cuba to build a viable economy upon which to support the export of revolution. I countered his negative view, pointing out that today many of the Latin American countries once under totalitarian rule are democratic, partly due to the spirit of reform he exemplified nearly half a century before. He acknowledged the progress made but remained adamant that the nations were still not free of foreign intervention.
+
+At this point one of the Mexican teams on TV scored a goal, and we broke off our political conversation to talk about soccer. Though I know about European soccer, I know next to nothing about the South American game. He enlightened me, although he admitted his information was a bit out of date. I asked him if he had seen the great Argentinean striker Alfredo Di Stefano play, but Che Guevara said he couldn’t remember.
+
+In light of the events of September 11th, I asked about violence. In his view, when is it justified? Che Guevara responded by saying that violence is justified because those who hold power unjustly respond only to violence as a tool for change. They will not willingly relinquish power unless shown that the people will overwhelm and destroy them. I disagreed vociferously, citing Peru and Guatemala as places where violence had been used and failed, only further impoverishing the nations. Che Guevara explained these failures as the inevitable outcome of the revolutionaries losing sight of their original moral goals. Reflecting upon his answers so far, I realized that I had lost some of my admiration for him. By taking up the standard of Pan-American unity, I felt he lost some of his humanity that led me to identify so closely with him. To me he had become more of a symbol than an actual person.
+
+At this point I realized that I had to be home soon and thanked him profusely for his generosity in answering my questions. As we walked toward the door, I noticed that I had left my hat on the table. I turned back to retrieve it, but by the time I had reached the doorway again, Che Guevara had disappeared into the mix of the afternoon sunlight and shadow cast by the “El” tracks, as mysteriously as he had come.
+Emily Fiffer
+Washington University, Class of 2004
+Topic of your choice.
+
+Psst! I have a confession to make. I have a shoe fetish. Everyone around me seems to underestimate the statement a simple pair of shoes can make. To me, though, the shoes I wear are not merely covering for the two feet on which I tread, but a reflection of who I am.
+
+So, who am I? Why don’t you look down at my feet? I could be wearing my high-platform sandals—my confidence, my leadership, my I-want-to-be-tall-even-though-I’m-not shoes. My toes are free in these sandals and wiggle at will. Much like my feet in my sandals, I don’t like being restricted. I have boundless energy that must not go to waste! Or maybe I’m wearing my furry pink pig slippers. I wear these on crisp winter nights when I’m home spending time with my family. My slippers are my comforting side. I can wear them and listen to a friend cry for hours on end. My favorite pair of shoes, however, are my bright red Dr. Martens. They’re my individuality, my enthusiasm, my laughter, my love of risk-taking. No one else I know has them. When I don’t feel like drawing attention to my feet or, for that matter, to myself, I wear my gym shoes. These sneakers render me indistinguishable from others and thereby allow me to be independent. I wear them running, riding my bicycle alone through the trails surrounded by signs of autumn, and even when I go to a museum and stand, transfixed by a single photograph. My hiking boots typify my love of adventure and being outdoors. Broken in and molded to the shape of my foot, when wearing them I feel in touch with my surroundings.
+
+During college I intend to add to my collection yet another closet full of colorful clodhoppers. For each aspect of my personality I discover or enhance through my college experiences, I will find a pair of shoes to reflect it. Perhaps a pair of Naot sandals for my Jewish Studies class or one black shoe and one white when learning about the Chinese culture and its belief in yin and yang. As I get to know myself and my goals grow nearer, my collection will expand.
+
+By the time I’m through with college, I will be ready to take a big step. Ready for a change, I believe I’ll need only one pair after this point. The shoes will be both fun and comfortable; I’ll be able to wear them when I am at work and when I return home. A combination of every shoe in my collection, these shoes will embody each aspect of my personality in a single footstep. No longer will I have a separate pair for each quirk and quality. This one pair will say it all. It will be evidence of my self-awareness and maturity. Sure, I’ll keep a few favorites for old times’ sake. I’ll lace up the old red shoes when I’m feeling rambunctious, when I feel that familiar, teenage surge of energy and remember the girl who wore them: a young girl with the potential to grow.
+
+I am entering college a naïve, teenage bundle of energy, independence, and motivation. My closet full of shoes mirrors my array of interests, and at the same time my difficulty in choosing a single interest that will satisfy me for the rest of my life. I want to leave college with direction, having pinpointed a single interest to pursue that will add texture and meaning to my life.
+
+So there you have it. I’ve told you about who I am, what I enjoy, and what I want from college. Want to know more? Come walk a day in my shoes.
+Leigh Rosen
+University of Pennsylvania, Class of 2009
+Describe a challenge you overcame.
+
+The stiff black apron hung awkwardly on my hips as I casually tried to tie the strings around my waist. I had been at Gino’s Restaurant for only ten minutes when Maurizio, the manager, grabbed my arm abruptly and said, “Follow me to the dungeon.” Unsure of whether or not he was joking, I smiled eagerly at him, but his glare confirmed his intent. I wiped the smirk off my face and followed him through the kitchen, which was louder than Madison Square Garden during a Knicks/Pacers game. A tall woman with a thick Italian accent pushed me while barking, “Move it, kid, you’re blocking traffic.” I later learned she was a waitress, and waitresses did not associate with the low-level busboys. Maurizio brought me to a dangerously steep staircase that looked like it had been purposely drenched in oil to increase the chance of a fall. As he gracefully flew down each step, I clutched onto the rusty tile walls, strategically putting one foot first and then the other. Eventually, I entered the “dungeon” and was directed to a table to join two men who were vigorously folding napkins.
+
+Pretending to know what had to be done, I took a pile of unfolded starched napkins and attempted to turn them into the Gino accordion. I slowly folded each corner, trying to leave exactly one inch on both sides, and ignored the giggles and whispers coming from across the table. When I finished my first napkin, I quickly grabbed another and tried again, hiding my pathetic initial attempt under my thigh. On my second try, I sighed with relief when I saw that what I had constructed slightly resembled an accordion shape. However, when I looked up, I saw that the other two men had each finished twenty perfect napkins. “Hurry up, little girl,” they said in unison, “We have lots left.” They pointed to a closet overflowing with white linens as I began to fold my third. The next couple of nights afforded me the opportunity to master such tasks as refilling toilet paper dispensers and filling breadbaskets. Just as I began to find solace in these more manageable jobs, I felt a forceful tap on my shoulder. A heavyset waiter who was sweating profusely barked, “I need one decaf cappuccino. Understand?”
+
+“Um, okay,” I stuttered, unable to get up enough courage to admit that I had never attempted to make a cappuccino. I glanced over at the intimidating espresso machine and started to pace back and forth. The waiter reappeared and with a look of irritation snapped, “If you didn’t know how to do it, why didn’t you say so? I don’t have time for this!” Returning to the unnecessary re-cleaning of silverware, the only job I could comfortably perform, it dawned on me that my fear of showing ignorance had rendered me incompetent. I had mastered the art of avoidance and had learned nothing. I continued to clean vigorously, making sure to keep my eyes on the silverware so that no one would ask me to make another cappuccino.
+
+Having barely made it through my first weekend at the restaurant, I was amazed at how relieved I felt to return to the familiarity of physics class. We were starting a new chapter on fiber optics. Moving through the material with greater ease than I had anticipated, we hit upon the topic of optical time domain reflectometers, and sweat began to form on my chest as I frantically flipped through my notebook. I marked my paper with an asterisk so that I would know to ask my teacher to explain this material when I met with him privately during my next free period. My teacher then said, “So, I’m sure you all understand OTDR, so let’s move on.” As all of my peers nodded in agreement, I suddenly realized that I was still not asking how to make cappuccino. I took a deep breath and the fear of not learning overcame my usual fear of looking foolish and I raised my hand. After my question had been answered, I felt like the Red Sox lifting the curse. I erased the star I had made on my notebook and confidently listened as we moved on to the next topic.
+
+I’m not suggesting that raising my hand and asking a question in physics class was a life-changing moment. It did not suddenly rid me of my fear of showing ignorance, but it definitely marked a new willingness to ask questions. When I returned to Gino’s the next weekend, I continued to spend some time unnecessarily cleaning silverware, but after asking Maurizio how to use the espresso machine, I soon added making cappuccino to my list of life skills.
+Another Special Warning: Essays from the Internet… Don’t Even Think About It
+
+College admissions offices are not naïve. They are aware that you can pay someone to write your essay and that essays are floating around for sale on the Internet. Don’t fool yourself; you certainly won’t fool anybody else. The admissions process has checks and balances, and the essay is part of that system. If there are inconsistencies in your application, if what you say in your essay doesn’t jibe with a recommendation or another part of your application, if the writing is perfect but you’re a B English student, red flags will fly. Write your own essay.
+                
+            </div>
+        
+        
+        
+        </div>
+        
+-->
+        
+            <div ui-view = "menuBar"></div>
+            <div ui-view = "app"  id="content"></div>
+            <div ui-view = "bottomMenu"></div>
+            
+           
+    </body>
+</html>

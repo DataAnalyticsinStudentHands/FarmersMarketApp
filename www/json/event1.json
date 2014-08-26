@@ -1,0 +1,13 @@
+{
+  "description" : "Yoga and cooking!",
+  "instructors" : [
+    "guy number 1 - B.S. in Culinary skills",
+    "guy number 2 - No degree, but I own a 5 star restaurant somewhere :)"
+    ],
+  "location" : "Fresh food company in the moody towers, University of Houston",
+  "cost" : "$90",
+  "name" : "Event number 2",
+  "timeStart" : "10:00",
+  "timeEnd" : "14:30",
+  "imageURL" : "path/to/image"
+}

@@ -1,0 +1,30 @@
+[
+	{
+		"buttonID": 0,
+		"ID": "home",
+		"imageURL": "img/homeButton.png",
+		"name": "Home Button",
+		"snippet": "This is the home button."
+	},
+	{
+		"buttonID": 1,
+		"ID": "directory",
+		"imageURL": "img/directoryButton.png",
+		"name": "Directory Button",
+		"snippet": "This is the directory button."
+	},
+	{
+		"buttonID": 2,
+		"ID": "favorites",
+		"imageURL": "img/favoritesButton.png",
+		"name": "Favorites Button",
+		"snippet": "This is the favorites button."
+	},	
+	{
+		"buttonID": 3,
+		"ID": "home",
+		"imageURL": "img/moreButton.png",
+		"name": "More Button",
+		"snippet": "This is the more button."
+	}
+]

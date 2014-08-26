@@ -1,0 +1,18 @@
+info about the {{eventInfo.name}}
+<br>
+{{eventInfo.description}}
+<br>
+Taught by - <div ng-repeat = "teachers in eventInfo.instructors">
+{{teachers}}
+</div>
+
+<a href="geo:0,0?q={{eventInfo.location}}">Address - {{eventInfo.location}}</a>
+<!-- create function to change URI dependent on user's device -->
+<br>
+Cost - {{eventInfo.cost}}
+<br>
+Start time - {{eventInfo.timeStart}}
+<br>
+End time - {{eventInfo.timeEnd}}
+
+<a href = "tel:832-955-2490">test</a>

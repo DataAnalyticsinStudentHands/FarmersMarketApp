@@ -1,0 +1,13 @@
+
+    this is more information about the farmer's market you have chosen.
+<br>
+{{farmerInfo.name}} is located at {{farmerInfo.location}}. 
+<br>
+{{farmerInfo.name}} is open from {{farmerInfo.hourOpen}} to {{farmerInfo.hourClosed}}.
+<br>
+Contact number : {{farmerInfo.phoneNumber}}
+<br>
+This vendor has the following:
+<dummy ng-repeat = "products in farmerInfo.products">
+    {{products}}
+</dummy>

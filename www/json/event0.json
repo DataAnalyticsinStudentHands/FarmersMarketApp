@@ -1,0 +1,13 @@
+{
+  "description" : "We will be doing some cool stuff during this event. Don't miss out!",
+  "instructors" : [
+    "guy number 1 Ph.D",
+    "guy number 2 Ph.D"
+    ],
+  "location" : "4800 calhoun road, houston tx, 77004",
+  "cost" : "$48",
+  "name" : "Event number 1",
+  "timeStart" : "09:00",
+  "timeEnd" : "11:30",
+  "imageURL" : "path/to/image"
+}

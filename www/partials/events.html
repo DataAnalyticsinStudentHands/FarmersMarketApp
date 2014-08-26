@@ -1,0 +1,18 @@
+<div ui-view  id = "example-five">
+    {{date}}
+<div ng-repeat = "event in events">    
+    <a ui-sref="state2.events.info({ id: event.id })">
+        {{event.dateMonth}} -
+        {{event.dateDay}} -
+        {{event.dateYear}}
+        //
+        {{event.location}}
+        <br>
+        {{event.snippet}}
+        <br>
+    </a>
+    <br>
+</div>
+
+</div>
+      

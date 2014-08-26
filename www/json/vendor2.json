@@ -1,0 +1,8 @@
+{
+  "location" : "4800 calhoun road, 77004",
+  "hourOpen" : "09:00",
+  "hourClosed" : "17:00",
+  "name" : "vendor2",
+  "phoneNumber" : "713-743-1234",
+  "products" : ["cougars","juice","bananas", "academics"]
+}

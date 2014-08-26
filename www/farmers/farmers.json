@@ -1,0 +1,16 @@
+[
+    {
+        "number": 0, 
+        "id": "farm-1", 
+        "imageUrl": "img/farm.jpg", 
+        "name": "Farm One", 
+        "snippet": "We sell a wide variety of stuff. Come visit us at xx time and these days - xx."
+    }, 
+    {
+        "number": 1, 
+        "id": "farm-2", 
+        "imageUrl": "img/farm2.jpg", 
+        "name": "Farm Two", 
+        "snippet": "We have more stuff than that other farm in the .JSON file."
+    }
+]

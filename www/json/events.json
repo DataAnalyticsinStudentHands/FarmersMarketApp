@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0, 
+		"dateMonth" : "02",
+		"dateDay" : "23",
+		"dateYear" : "2014",
+        "eventID": "event1",  
+        "name": "Event number 1", 
+		"location" : "rice university farmer's market",
+        "snippet": "Doing some cool stuff"
+    }, 
+    {
+        "id": 1,  
+		"dateMonth" : "08",
+		"dateDay" : "27",
+		"dateYear" : "2014",
+        "eventID": "event2", 
+        "name": "Event number 2", 
+		"location" : "urban harvest",
+        "snippet": "yoga/cook session"
+    }
+]

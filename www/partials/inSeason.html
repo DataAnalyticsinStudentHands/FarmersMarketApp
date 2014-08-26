@@ -1,0 +1,13 @@
+   <div ui-view  id = "example-five"> 
+<h1>Seasonal Items</h1>
+
+
+<input type="search" ng-model="q" placeholder="Search.." />
+<br>
+<div ng-repeat="fruits in seasonal | filter:q">
+    {{fruits.apples}}
+</div>
+
+      </div>  
+      
+

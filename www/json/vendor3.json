@@ -1,0 +1,8 @@
+{
+  "location" : "intersection of highway 6 and I-10",
+  "hourOpen" : "12:00",
+  "hourClosed" : "18:00",
+  "name" : "vendor3",    
+  "phoneNumber" : "832-006-0110",
+  "products" : ["traffic","cars","gas", "oranges"]
+}
