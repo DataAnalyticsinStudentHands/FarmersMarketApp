@@ -1,0 +1,29 @@
+<template name="feed">
+  <div class="page whats-cooking">
+
+
+    {{>nav title="Fresh Produce"}}
+
+    <div class="content-scrollable">
+      
+      <div class="list-activities {{#unless ready}}loading{{/unless}}">
+        {{#if ready}}
+          {{#each activities}}
+            {{> activity}}
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No one is selling today!</div>
+              <div class="subtitle-message">Share that you visit a market and it will show up here.</div>
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="icon-sync"></div>
+            <div class="title-message">Loading</div>
+          </div>
+        {{/if}}
+      </div>
+      
+    </div>
+  </div>
+</template>

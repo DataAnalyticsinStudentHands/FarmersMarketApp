@@ -1,0 +1,47 @@
+<template name="home">
+  <div class="page home">
+
+    {{>nav title='Local Market' black=true}}
+
+    <div class="content-scrollable">
+      <div class="bg-image home">
+        <h1 class="title-home">
+          <img src="img/app/logo-local.svg" alt="Houston Farmer's Market"/>
+        </h1>
+        <!--<span class="hours"><span class="title-callout">Hours</span>
+        Mon–Fri 9-6pm, Sat 10-5pm</span>-->
+        <span class="arrow"></span>
+      </div>
+
+      <div class="callout-news">
+        <span class="title-callout">News</span>
+        {{latestNews.text}}
+      </div>
+
+      <h2 class="list-title">Who's selling</h2>
+      <div class="list-subtitle">See what market is currently open</div>
+      <div class="list-activities">
+        {{#each activities}}
+          {{> activity}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No market today!</div>
+            <div class="subtitle-message">Share your experience with a market you visited today</div>
+          </div>
+        {{/each}}
+      </div>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">See who's selling</a>
+
+      <h2 class="list-title">Our Favorite Recipes</h2>
+      <div class="list-subtitle">Voted by our local consumers</div>
+      <div class="list-recipes">
+        {{#each featuredRecipes}}
+          {{> recipeItem recipe=this size='small'}}
+        {{/each}}
+      </div>
+
+      <a href="{{pathFor 'feed'}}" class="btn-primary">Explore all Houston Farmer's Market</a>
+    </div>
+
+  </div>
+</template>
