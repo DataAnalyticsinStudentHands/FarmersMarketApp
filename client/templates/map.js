@@ -51,5 +51,12 @@ Template.map.onCreated(function() {
             infowindow2.open(map.instance, marker2);
         });
         
+        var image = '/img/app/flag1.png'
+        var marker3 = new google.maps.Marker({
+            position: new google.maps.LatLng(pos.lat, pos.lng),
+            map: map.instance,
+            title: 'You are here',
+            icon: image
+        });
     });
 });
