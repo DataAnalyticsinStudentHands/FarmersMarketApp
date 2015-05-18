@@ -16,7 +16,7 @@ Template.activity.onRendered(function() {
 Template.activity.helpers({
  
   eventTitle: function() {
-    return Events[this.eventName].title;
+    return Activities[this.activityName].title;
   },
   path: function() {
     return Router.path('event', { name: this.eventName },

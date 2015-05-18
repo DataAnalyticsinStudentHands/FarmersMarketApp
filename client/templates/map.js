@@ -3,7 +3,14 @@ Template.map.helpers({
         if (GoogleMaps.loaded()) {
             return {
                 center: new google.maps.LatLng(29.7199, -95.3422),
-                zoom: 10
+                zoom: 10,
+                scaleControl: false,                
+                zoomControl: false,
+                mapTypeControl: false,
+                panControl: false,
+                rotateControl: true,
+                overviewMapControl: false, 
+                streetViewControl: false
             };
         }
     }    
@@ -11,6 +18,7 @@ Template.map.helpers({
 
 Template.map.onCreated(function() {
     GoogleMaps.ready('map', function(map) {
+        
         var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(29.71739, -95.40183),
             map: map.instance,
