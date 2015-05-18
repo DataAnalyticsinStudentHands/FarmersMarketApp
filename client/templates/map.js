@@ -1,9 +1,15 @@
+
 Template.map.helpers({
     mapOptions: function() {
         if (GoogleMaps.loaded()) {
+            
+            if (!Geolocation.error()) {                
+                pos = Geolocation.latLng();
+            } 
             return {
-                center: new google.maps.LatLng(29.7199, -95.3422),
-                zoom: 10,
+                //center: new google.maps.LatLng(-25.2743, 133.7751),
+                center: new google.maps.LatLng(pos.lat, pos.lng),
+                zoom: 12,
                 scaleControl: false,                
                 zoomControl: false,
                 mapTypeControl: false,
