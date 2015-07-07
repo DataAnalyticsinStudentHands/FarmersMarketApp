@@ -20,11 +20,15 @@ Template.map.helpers({
         if (GoogleMaps.loaded()) {
             
             if (!Geolocation.error()) {                
-                pos = Geolocation.latLng();
-            } 
+                //pos = Geolocation.latLng();
+                pos = Geolocation.currentLocation();
+            } else {
+                pos.coords.latitude = -25.2743;
+                pos.coords.longitude = 133.7751;
+            }
             return {
                 //center: new google.maps.LatLng(-25.2743, 133.7751),
-                center: new google.maps.LatLng(pos.lat, pos.lng),
+                center: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
                 zoom: 12,
                 scaleControl: false,                
                 zoomControl: false,
