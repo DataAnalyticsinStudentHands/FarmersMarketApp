@@ -1,3 +1,19 @@
+var gmaps = {
+    
+    // map object
+    map: null,
+    
+    //direction services object
+    directionsService: null,
+ 
+    //direction services object
+    directionsDisplay: null,
+    
+    //direction services object
+    stepDisplay: null,
+    
+    markerArray: []
+}
 
 Template.map.helpers({
     mapOptions: function() {
@@ -16,14 +32,27 @@ Template.map.helpers({
                 panControl: false,
                 rotateControl: true,
                 overviewMapControl: false, 
-                streetViewControl: false
+                streetViewControl: false,
+               
+                
             };
         }
-    }    
+    }
+    
+     
+    
+    
 });
 
 Template.map.onCreated(function() {
     GoogleMaps.ready('map', function(map) {
+        
+       
+        
+        var bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(map.instance);
+    
+        
         
         var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(29.71739, -95.40183),
@@ -31,10 +60,11 @@ Template.map.onCreated(function() {
             title: 'Rice U Farmers Market'            
         });        
         var infowindow1 = new google.maps.InfoWindow({
-              content: 'Farmers Market at Rice U'
+              content: ''
           });
 
         google.maps.event.addListener(marker1, 'click', function() {
+            infowindow1.setContent( '<p>Farmers Market at Rice U </p>' +'<button onclick="Meteor.myFunctions.calcRoute()">Directions from my Location</button>');
             infowindow1.open(map.instance, marker1);
         });
         
@@ -58,5 +88,18 @@ Template.map.onCreated(function() {
             title: 'You are here',
             icon: image
         });
-    });
+        
+        var rendererOptions = {
+            map: map.instance
+        }
+        
+        this.directionsService = new google.maps.DirectionsService();
+        
+        directionsDisplay = new                                                         google.maps.DirectionsRenderer(rendererOptions);
+  
+        // global flag saying we intialized already
+        Session.set('map', true);
+    })
+        
+        
 });
